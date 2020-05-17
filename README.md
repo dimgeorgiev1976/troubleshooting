@@ -1,4 +1,10 @@
 # troubleshooting
+kubectl logs pod/pod-name -n valkyrie-dev-86754694bf-27fwb
+kubectl get events -n valkyrie-dev-86754694bf-27fwb
+export valkyrie-dev=$(kubectl get pods --namespace default -l "app.kubernetes.io/component=jenkins-master" -l "app.kubernetes.io/instance=cd" -o jsonpath="{.items[0].metadata.name}") kubectl port-forward $POD_NAME 8080:8080 >> /dev/null &
+
+https://source.cloud.google.com/qwiklabs-gcp-02-c8f9d62e13ce/valkyrie-app
+
 If your container is in a private container respository that requires authentication, then you need to add this secret into Kubernetes and add the imagePullSecrets reference to it in your deployment.
 Add the credential secret to Kubernetes
 Add the reference of the secret to use in your pod definition
@@ -25,7 +31,7 @@ containers:
 
 When you run the kubectl create command to create the auth deployment, it will make one pod that conforms to the data in the Deployment manifest
 
-
+source/html.go 
 
 
 
